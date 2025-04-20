@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ejemplo-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: ejemplo
@@ -15,5 +15,6 @@ spec:
       containers:
         - name: ejemplo-container
           image: joaquinsangiorgio/static-website
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
